@@ -1,0 +1,20 @@
+<h2><%= @list.name %></h2>
+
+
+<% @list.bookmarks.each do |bookmark| %>
+  <%= Movie.find(bookmark.movie_id).title %>
+  <%= Movie.find(bookmark.movie_id).overview %>
+  <%= Movie.find(bookmark.movie_id).poster_url %>
+  <%= Movie.find(bookmark.movie_id).rating %>
+  <br>
+  <%= bookmark.comment %>
+      <%= link_to "Remove",
+                  bookmark_path(bookmark),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+<% end %>
+
+<br>
+<%= link_to 'Add the new Bookmark to the List', new_list_bookmark_path(@list) %>
+<br>
+<%= link_to 'Home page', lists_path %>

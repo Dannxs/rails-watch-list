@@ -1,0 +1,7 @@
+<%= simple_form_for [ @list, @bookmark ] do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :movie_id %>
+  <%= f.submit "Submit bookmarker", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to 'Cancel', lists_path %> 
