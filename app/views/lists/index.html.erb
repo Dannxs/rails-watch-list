@@ -1,15 +1,14 @@
-<h1>Movies Lists</h1>
 
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);">
+  <div class="contener">
+    <h1>Movies Lists</h1>
+  </div>
+</div>
 
-
-<% @lists.each do |list| %>
-  <%= link_to list.name, list_path(list) %>
-<% end %>
-<br>
-<%= link_to 'Create a List', new_list_path(@list) %>
-
-<div class="background">
-  <h2>Hero Section</h2>
-  <h4>It's easy to set background image with Torus Kit</h4>
-  <%= image_tag "background image.PNG", alt: "Le Wagon", :class => "bg-img" %>
+<div class="card_movies">
+  <% @lists.each do |list| %>
+    <div class="card-movies-infos" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/189449/pexels-photo-189449.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
+      <%= link_to list.name, list_path(list), :class => "text-card" %>
+    </div>
+  <% end %>
 </div>
