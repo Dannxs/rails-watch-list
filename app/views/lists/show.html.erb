@@ -1,13 +1,13 @@
 <h2><%= @list.name %></h2>
 
-<div class="cards">>
+<div class="cards">
   <% @list.bookmarks.each do |bookmark| %>
     <br>
     <div class="card-list">
-      <h4><%= Movie.find(bookmark.movie_id).title %></h4>
-      <%= Movie.find(bookmark.movie_id).overview %>
+      <h3><%= Movie.find(bookmark.movie_id).title %></h3>
+      <%= image_tag Movie.find(bookmark.movie_id).poster_url, :class => "w-25" %>
       <br>
-      <%= Movie.find(bookmark.movie_id).poster_url %>
+      <%= Movie.find(bookmark.movie_id).overview %>
       <br>
       <%= Movie.find(bookmark.movie_id).rating %>
       <br>

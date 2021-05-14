@@ -1,6 +1,6 @@
 <%= simple_form_for [ @list, @bookmark ] do |f| %>
   <%= f.input :comment %>
-  <%= f.input :movie_id %>
+  <%= f.input :movie_id, as: :select %>
   <%= f.submit "Submit bookmarker", class: "btn btn-primary" %>
 <% end %>
 
