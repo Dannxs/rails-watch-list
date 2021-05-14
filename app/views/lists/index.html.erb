@@ -7,7 +7,7 @@
 
 <div class="card_movies">
   <% @lists.each do |list| %>
-    <div class="card-movies-infos" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/189449/pexels-photo-189449.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
+    <div class="card-movies-infos" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
       <%= link_to list.name, list_path(list), :class => "text-card" %>
     </div>
   <% end %>
